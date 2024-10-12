@@ -1,0 +1,50 @@
+﻿@model TP02SWII6.Models.Container
+
+@{
+    ViewData["Title"] = "Edit Container";
+}
+
+<h2>Edit Container</h2>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label asp-for="IdBL" class="control-label"></label>
+        <select asp-for="IdBL" class="form-control" asp-items="@(new SelectList(ViewBag.BLs, "Id", "Numero"))">
+            <option value="">-- Selecione um BL --</option>
+        </select>
+        <span asp-validation-for="IdBL" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Numero" class="control-label"></label>
+        <input asp-for="Numero" class="form-control" />
+        <span asp-validation-for="Numero" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Tipo" class="control-label"></label>
+        <select asp-for="Tipo" class="form-control" asp-items="@(new SelectList(ViewBag.Tipos, "Value", "Text"))">
+            <option value="">-- Selecione um Tipo --</option>
+        </select>
+        <span asp-validation-for="Tipo" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Tamanho" class="control-label"></label>
+        <select asp-for="Tamanho" class="form-control" asp-items="@(new SelectList(ViewBag.Tamanhos, "Value", "Text"))">
+            <option value="">-- Selecione um Tamanho --</option>
+        </select>
+        <span asp-validation-for="Tamanho" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

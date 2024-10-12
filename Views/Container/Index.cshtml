@@ -1,0 +1,36 @@
+﻿@model IEnumerable<TP02SWII6.Models.Container>
+
+<div class="container mt-4">
+    <h2 class="mb-4">Lista de Containers</h2>
+    <h3><a asp-action="Create" class="btn btn-primary mb-3">Crie um novo</a></h3>
+
+    <table class="table table-bordered">
+        <!-- Adicionando classes de Bootstrap para tabela -->
+        <thead class="thead-dark">
+            <tr>
+                <th>Número</th>
+                <th>Tipo</th>
+                <th>Tamanho</th>
+                <th>BL</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var container in Model)
+            {
+                <tr>
+                    <td>@container.Numero</td>
+                    <td>@container.Tipo</td>
+                    <td>@container.Tamanho</td>
+                    <td>@container.IdBL</td>
+                    <td>
+                        <a href="/Container/Edit/@container.Id" class="btn btn-warning btn-sm">Editar</a>
+                        <form asp-action="Delete" asp-route-id="@container.Id" method="post" style="display:inline;">
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir este container?');">Excluir</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,38 @@
+﻿@model TP02SWII6.Models.BL
+
+@{
+    ViewData["Title"] = "Edit BL";
+}
+
+<h2>Edit BL</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label asp-for="Numero" class="control-label"></label>
+        <input asp-for="Numero" class="form-control" />
+        <span asp-validation-for="Numero" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Consignee" class="control-label"></label>
+        <input asp-for="Consignee" class="form-control" />
+        <span asp-validation-for="Consignee" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Navio" class="control-label"></label>
+        <input asp-for="Navio" class="form-control" />
+        <span asp-validation-for="Navio" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

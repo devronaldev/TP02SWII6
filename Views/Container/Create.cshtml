@@ -1,0 +1,36 @@
+﻿@model TP02SWII6.Models.Container
+
+<h2>Cadastro de Container</h2>
+
+<form method="post">
+    <div>
+        <label for="Numero">Número do Container</label>
+        <input type="text" id="Numero" name="Numero" required />
+    </div>
+    <div>
+        <label for="Tipo">Tipo</label>
+        <select id="Tipo" name="Tipo">
+            <option value="1">Dry</option>
+            <option value="2">Reefer</option>
+        </select>
+    </div>
+    <div>
+        <label for="Tamanho">Tamanho</label>
+        <select id="Tamanho" name="Tamanho">
+            <option value="20">Pequeno</option>
+            <option value="40">Grande</option>
+        </select>
+    </div>
+    <div>
+        <label for="BL">BL</label>
+        <select id="IdBL" name="IdBL">
+            @foreach (var bl in ViewBag.BLs)
+            {
+                <option value="@bl.Id">@bl.Numero</option>
+            }
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="Salvar Container" />
+    </div>
+</form>

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<TP02SWII6.Models.BL>
+
+<div class="container mt-4">
+    <!-- Container com margem superior -->
+    <h2>Lista de BLs</h2>
+    <h3><a asp-action="Create">Crie um novo</a></h3>
+
+    <div class="table-responsive mb-3">
+        <!-- Tabela responsiva com margem inferior -->
+        <table class="table table-bordered">
+            <!-- Adicionando classes de Bootstrap para tabela -->
+            <thead class="thead-dark">
+                <!-- Cabeçalho escuro -->
+                <tr>
+                    <th>Número</th>
+                    <th>Consignee</th>
+                    <th>Navio</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var bl in Model)
+                {
+                    <tr>
+                        <td>@bl.Numero</td>
+                        <td>@bl.Consignee</td>
+                        <td>@bl.Navio</td>
+                        <td>
+                            <a href="/BL/Edit/@bl.Id" class="btn btn-warning btn-sm">Editar</a> <!-- Botão de editar -->
+                            <form method="post" asp-action="Delete" asp-route-id="@bl.Id" style="display:inline;" onsubmit="return confirmDelete();">
+                                <input type="submit" value="Excluir" class="btn btn-danger" />
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <script>
+            function confirmDelete() {
+                console.log()
+                return confirm("Tem certeza de que deseja excluir este item?");
+            }
+        </script>
+    </div>
+</div>
