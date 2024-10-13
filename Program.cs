@@ -1,6 +1,9 @@
 using TP02SWII6.Models;
 using Microsoft.EntityFrameworkCore;
-
+/*AUTORES:
+    Ronald Pereira Evangelista / CB3020282
+    Ketheleen Cristine Simão dos Santos / CB3011836
+*/
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

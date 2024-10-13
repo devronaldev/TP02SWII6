@@ -5,6 +5,10 @@ using TP02SWII6.Models;
 
 namespace TP02SWII6.Controllers
 {
+    /*AUTORES:
+        Ronald Pereira Evangelista / CB3020282
+        Ketheleen Cristine Simão dos Santos / CB3011836
+    */
     public class ContainerController : Controller
     {
         private readonly ApplicationDbContext _context;

@@ -3,6 +3,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TP02SWII6.Models
 {
+    /*AUTORES:
+        Ronald Pereira Evangelista / CB3020282
+        Ketheleen Cristine Simão dos Santos / CB3011836
+    */
+
     [Table("bl")]
     public class BL
     {
